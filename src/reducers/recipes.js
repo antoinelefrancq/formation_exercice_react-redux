@@ -1,4 +1,5 @@
 import data from 'src/data';
+import { IMPORT_DATA } from '../actions/recipes';
 
 export const initialState = {
   list: data,
@@ -6,6 +7,11 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case IMPORT_DATA:
+      return {
+        ...state,
+        list: action.payload,
+      };
     default:
       return state;
   }

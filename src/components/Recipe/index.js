@@ -26,6 +26,7 @@ function Recipe({findedRecipe}) {
   }
   return (
     <Page>
+      <AppHeader />
       <div className="recipe">
         <Header
           name={recipe.title}
