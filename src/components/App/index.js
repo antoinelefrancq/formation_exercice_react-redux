@@ -11,6 +11,7 @@ import Loading from './Loading';
 
 import './style.scss';
 import { actionfetchData } from '../../actions/recipes';
+import ScrollToTop from '../ScrollTop';
 
 function App(props) {
   const recipes = useSelector((state) => state.recipes.list);
@@ -25,6 +26,7 @@ function App(props) {
   return (
     <div className="app">
       <Menu />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={(<Home />)} />
         {recipes.map((recipe) => (
