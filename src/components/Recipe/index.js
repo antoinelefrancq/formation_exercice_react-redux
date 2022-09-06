@@ -17,15 +17,15 @@ import Instructions from './Instructions';
 import './style.scss';
 
 // == Composant
-function Recipe() {
-  const recipe = useSelector((state) => findRecipe(state.recipes.list, 'crepes-raffinees'));
+function Recipe({findedRecipe}) {
+  console.log(findedRecipe)
+  const recipe = useSelector((state) => findRecipe(state.recipes.list, findedRecipe));
 
   if (!recipe) {
     return <Navigate to="/error" replace={true} />;
   }
   return (
     <Page>
-      <AppHeader />
       <div className="recipe">
         <Header
           name={recipe.title}
